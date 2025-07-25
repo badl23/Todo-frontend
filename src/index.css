@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+
+html {
+  line-height: 1.15;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "RocknRoll One", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  color: #f0f0f0;
+  min-height: 100vh;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.App {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+  margin-bottom: 2rem;
+}
+
+.addTodos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.todo-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #555;
+  color: #f0f0f0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  width: 40%;
+  min-width: 15rem;
+  max-height: 2.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.todo-input::placeholder {
+  color: #aaa;
+}
+
+.todo-input:focus {
+  outline: none;
+  border: 2px solid #8e2de2;
+}
+
+.add-btn {
+  margin-left: 1rem;
+  background: linear-gradient(145deg, #8e2de2, #4a00e0);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.9);
+}
+
+.add-btn:focus {
+  outline: none;
+}
+
+.displaytodos {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.displaytodos .search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  margin-bottom: 1.8rem;
+  width: 100%;
+  max-width: 4000px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 2px solid #8e2de2;
+}
+
+.displaytodos .buttons {
+  margin-bottom: 2rem;
+}
+
+.displaytodos .buttons button {
+  background: transparent;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid #8e2de2;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.displaytodos .buttons button:hover {
+  background: #8e2de2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+.displaytodos .buttons button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.displaytodos ul {
+  list-style: none;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 0 1rem 1rem 0;
+  width: 18rem;
+  height: 8rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #fff;
+}
+
+.card textarea {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  resize: none;
+  height: 70%;
+}
+
+.card textarea:disabled {
+  color: #bbb;
+}
+
+.card .btns {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.card .btns button {
+  color: #8e2de2;
+  background-color: transparent;
+  margin: 0 0.6rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card .btns button:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+.card .btns button:focus {
+  outline: none;
+}
+
+.completed {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: #4a00e0;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #272727;
+}
+
+@media screen and (max-width: 640px) {
+  .displaytodos {
+    margin-top: 2rem;
+  }
+
+  .displaytodos ul {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .card {
+    margin-right: 0;
+  }
+
+  .todo-input {
+    width: 80%;
+  }
+}
